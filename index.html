@@ -4,96 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hi it's Talha</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=League+Gothic&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
-        /* Extracting the "Browse" tab color scheme */
         :root {
-            --bg-color: #fdf6e3;        /* The warm 'antique' background */
-            --text-main: #073642;      /* The dark deep teal text */
-            --accent-yellow: #f1c40f;   /* The bright highlight yellow */
-            --link-color: #268bd2;     /* The classic link blue */
-            --border-color: #93a1a1;   /* The subtle grey borders */
+            --accent: #d97706; /* The warm amber/orange from your site */
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --title-shadow: rgba(0,0,0,0.1);
         }
 
-        html {
-            background-color: var(--bg-color);
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            /* Your exact requested background gradients */
+            background: 
+                linear-gradient(135deg, rgba(255,250,232,0.88), rgba(255,252,242,0.96)),
+                linear-gradient(120deg, rgba(28,63,164,0.08), transparent 52%);
             color: var(--text-main);
-            font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;
-            max-width: 70ch;
-            padding: 3em 1.5em;
-            margin: auto;
-            line-height: 1.6;
-            font-size: 1.15em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
         }
 
-        h1, h2 {
-            margin-bottom: 0.2em;
-            font-weight: 800;
+        article {
+            max-width: 38rem; /* Matching your .tab-copy max-width */
+            width: 100%;
+        }
+
+        .kicker {
+            color: var(--accent);
+            font-family: "Caveat Brush", "Bradley Hand", cursive;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 0.95;
+            margin-bottom: 6px;
         }
 
         h1 {
-            font-size: 2.2em;
-            background-color: var(--accent-yellow);
-            display: inline-block;
-            padding: 0 10px;
-            margin-top: 0;
-        }
-
-        h2 {
-            font-size: 1.2em;
-            color: var(--border-color);
+            font-family: "League Gothic", Impact, sans-serif;
+            font-size: clamp(40px, 12vw, 84px); /* Pushing the scale for a main site */
+            line-height: 0.9;
+            letter-spacing: 0.02em;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 2em;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 0 var(--title-shadow);
         }
 
-        p {
-            margin-bottom: 1.5em;
+        .copy {
+            font-family: "Inter", system-ui, sans-serif;
+            color: var(--text-muted);
+            font-size: 16px; /* Slightly bumped from 14px for a main landing page */
+            line-height: 1.55;
+            margin-bottom: 2rem;
         }
 
-        .links-container {
-            margin-top: 3em;
-            padding-top: 1.5em;
-            border-top: 1px solid var(--border-color);
+        .links {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
         a {
-            color: var(--link-color);
+            font-family: "League Gothic", sans-serif;
+            font-size: 24px;
+            text-transform: uppercase;
             text-decoration: none;
-            font-weight: bold;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            width: fit-content;
+            transition: all 0.2s ease;
         }
 
         a:hover {
-            background-color: var(--accent-yellow);
-            color: var(--text-main);
+            background: var(--accent);
+            color: white;
+            padding: 0 8px;
+            transform: translateX(5px);
         }
 
-        .project-link {
-            display: block;
-            margin-top: 1em;
-            font-size: 1.1em;
+        .external-arrow {
+            font-family: sans-serif;
+            font-size: 18px;
+            margin-left: 5px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Hi it's Talha</h1>
-    <h2>Ontology Engineer</h2>
-
-    <p>
-        I like to help you make sense of your stuff. I am a specialist in building the invisible structures that organize information, currently focused on mapping the complex domain of physical movement and fitness as an ontology engineer. Whether it’s extracting biometric data from my Wyze scale with Python or training for a 50k ultramarathon, I believe everything is better when it's well-modeled and clearly understood.
-    </p>
-
-    <p>
-        Beyond the data, you’ll usually find me in the middle of a six-day lifting split, planning my next trip (hopefully back to Japan), or dialing in the perfect AeroPress brew to replace my old Dunkin’ habit.
-    </p>
-
-    <div class="links-container">
-        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ahmadtalha/">linkedin.com/in/ahmadtalha/</a>
+    <article>
+        <div class="kicker">Helping you make sense of your stuff</div>
+        <h1>Hi it's Talha</h1>
         
-        <a href="https://www.talha.foo/free-exercise-graph/" class="project-link">
-            ↳ Check out the Free Exercise Graph
-        </a>
-    </div>
+        <div class="copy">
+            Loren ipsum boopity boop I'll write this up later.
+        </div>
+
+        <div class="links">
+            <a href="https://www.linkedin.com/in/ahmadtalha/" target="_blank">
+                LinkedIn <span class="external-arrow">↗</span>
+            </a>
+            <a href="https://www.talha.foo/free-exercise-graph/">
+                Free Exercise Graph <span class="external-arrow">↳</span>
+            </a>
+        </div>
+    </article>
 
 </body>
 </html>
